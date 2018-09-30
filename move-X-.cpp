@@ -30,7 +30,7 @@ void savePointOfXY()
 		yPoint.push_back(y);
 	}
 }
-void back(bool & xBack , bool & yBack)
+void checkBack(bool & xBack , bool & yBack)
 {
 	if(x == 29)
 		xBack = true;
@@ -70,26 +70,25 @@ void print()
 	system("clear");
 
 	for(int i = 0 ; i < 60 ; i++)
-			cout << "-";
-		cout << endl;
-
-		for(int i = 1 ; i<30; i++)
+		cout << "-";
+	cout << endl;
+	for(int i = 1 ; i<30; i++)
+	{
+		for(int j = 0 ; j < 61 ; j++)
 		{
-			for(int j = 0 ; j < 61 ; j++)
-			{
-				bool flag = false;
-				printo(i ,j ,flag);
+			bool flag = false;
+			printo(i ,j ,flag);
 
-				if(j == 0 || j == 60)
-					cout << "|";
-				else if(flag== false)
-					cout << " ";
+			if(j == 0 || j == 60)
+				cout << "|";
+			else if(flag== false)
+				cout << " ";
 
-			}
-			cout << endl;
 		}
-		for (int i = 0 ; i < 60 ; i++)
-			cout << "-";
+		cout << endl;
+	}
+	for (int i = 0 ; i < 60 ; i++)
+		cout << "-";
 
 
 		cout << endl;
@@ -101,13 +100,12 @@ int main()
 	xPoint.push_back(-1);
 	yPoint.push_back(-1);
 
-	int numberic = 0;
 	while(true)
 	{
 
 		savePointOfXY();
 
-		back(xBack, yBack);
+		checkBack(xBack, yBack);
 		if(xBack == false)
 			x++;
 		else
@@ -117,7 +115,5 @@ int main()
 		else
 			y--;
 		print();
-		numberic++;
 	}
-	return 0;
 }
