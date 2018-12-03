@@ -11,7 +11,7 @@
 #include <unistd.h>
 #include <vector>
 using namespace std;
-int x = 26 , y = 1;
+int x = 1 , y = 1;
 vector<int> xPoint;
 vector<int> yPoint; //point that print 'o'
 void savePointOfXY()
@@ -66,7 +66,7 @@ void printo(int i , int j , bool& flag)
 }
 void print()
 {
-	usleep(100000);
+	usleep(10000);
 	system("clear");
 
 	for(int i = 0 ; i < 60 ; i++)
