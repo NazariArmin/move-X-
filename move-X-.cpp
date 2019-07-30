@@ -14,6 +14,7 @@ using namespace std;
 int x = 1 , y = 1;
 vector<int> xPoint;
 vector<int> yPoint; //point that print 'o'
+int speed = 2;
 void savePointOfXY()
 {
 	bool flag = true;
@@ -66,7 +67,7 @@ void printo(int i , int j , bool& flag)
 }
 void print()
 {
-	usleep(10000);
+	usleep(100000 / speed);
 	system("clear");
 
 	for(int i = 0 ; i < 60 ; i++)
